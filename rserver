@@ -1,0 +1,3 @@
+#! /bin/bash
+
+source ~/Scripts/rserver/$1_rserver.sh
