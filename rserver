@@ -1,3 +1,3 @@
 #! /bin/bash
 
-source ~/Scripts/rserver/$1_rserver.sh
+source $( dirname "${BASH_SOURCE[0]}" )/$1_rserver.sh

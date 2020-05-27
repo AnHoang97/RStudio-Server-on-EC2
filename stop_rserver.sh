@@ -4,8 +4,8 @@ sourceDir="${BASH_SOURCE[0]}"
 instanceId=$(cat $(dirname $sourceDir)/.instanceId)
 
 instanceStatus=$(aws ec2 describe-instance-status --instance-id $instanceId --query 'InstanceStatuses[0].SystemStatus.Status' | sed -e 's/^"//' -e 's/"$//')
-if [ "$instanceStatus" -ne "ok" ]; then
-    echo "EC2 instance isn't up"
+if [[ $instanceStatus -ne "ok" ]]; then
+	echo "EC2 instance isn't up"
 else
 	# stop rstudio server
 	echo "Stop RStudio Server ..."
